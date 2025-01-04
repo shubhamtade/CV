@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
-import Skills from "./components/Skills.jsx";
+import Skills from "./components/Skills";
 import Project from "./components/Project";
-import Jobs from "./components/jobs.jsx";
-import GitHub from "./components/GitHub.jsx";
+import Jobs from "./components/jobs";
+import GitHub from "./components/GitHub";
 
 const App = () => {
   const [theme, setTheme] = useState("light");
