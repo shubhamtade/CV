@@ -12,7 +12,7 @@ import HotelIcon from "@mui/icons-material/Hotel";
 import RepeatIcon from "@mui/icons-material/Repeat";
 import Typography from "@mui/material/Typography";
 
-export default function CustomizedTimeline({ theme }) {
+export default function CustomizedTimeline({ bgColor, theme }) {
   const jobExperiences = [
     {
       company: "Crio.Do",
@@ -131,55 +131,121 @@ export default function CustomizedTimeline({ theme }) {
       type: "Full-time",
     },
   ];
-  return (
-    <section className={`flex justify-center pb-6 `}>
-      <div className="w-full max-w-[1050px] flex flex-col gap-0 justify-center md:py-8">
-        <div className="container mx-auto p-4">
-          <h1 className="text-3xl font-bold mb-8">Job Experiences</h1>
-          <div className=" border-l border-gray-200 pl-4 ">
-            {jobExperiences.map((job, index) => (
-              <div key={index} className="mb-10 ml-4 relative">
-                <div className="absolute -top-1 w-3 h-3 bg-green-500/90 rounded-full  -left-1.5 border border-white animate-ping"></div>
-                <div className="absolute -top-1 w-3 h-3 bg-green-500/90 rounded-full  -left-1.5 border border-white"></div>
 
-                <div className="bg-white p-4 rounded-lg shadow-md ">
-                  <div className="flex justify-between items-center">
-                    <h2 className="text-xl font-semibold pt-3 text-[#0E43A0]">
-                      {job.role} <br className="block md:hidden" />
-                      <span className="text-[12px] "> at {job.company}</span>
-                    </h2>
-                    <p className=" py-1 px-2 absolute top-2 right-2 bg-green-500/90 text-white text-[10px] rounded-tl-full rounded-bl-full">
-                      <strong>From : </strong>
-                      {job.duration}
-                    </p>
-                  </div>
-                  <h3 className="text-lg font-medium text-gray-600"></h3>
-                  <p className="text-sm text-gray-500">
-                    Industry : {job.industry}
-                  </p>
-                  <ul className="mt-2 list-disc list-inside text-gray-500">
-                    {job.responsibilities.map((responsibility, idx) => (
-                      <li key={idx} className="text-justify text-sm">
-                        {responsibility}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="text-gray-700 text-base mt-2 flex flex-wrap gap-1">
-                    {job.skills.map((skill, index) => (
-                      <p className="bg-slate-300 md:bg-slate-200 py-[1px] px-[10px] text-[10px] rounded-full opacity-50 md:opacity-90">
-                        {skill}
-                      </p>
-                    ))}
-                  </p>
-                  <p className=" text-gray-700 absolute -top-3">
-                    <span className=" bg-yellow-300 text-[12px] font-bold px-[4px] py-[2px] rounded-tl-lg rounded-br-lg">
-                      {job.type}
-                    </span>
+  const backgroundStyle =
+    theme === "light"
+      ? ""
+      : "linear-gradient(140.53deg, rgba(0, 0, 0, 0.5) 12.34%, rgba(0, 0, 0, 0) 51.46%)";
+  return (
+    // <section className={`flex justify-center pb-6 `}>
+    //   <div className="w-full max-w-[1050px] flex flex-col gap-0 justify-center md:py-8">
+    //     <div className="container mx-auto p-4">
+    //       <h1 className="text-3xl font-bold mb-8">Job Experiences</h1>
+
+    //       <div className=" border-l border-gray-200 pl-4 ">
+    //         {jobExperiences.map((job, index) => (
+    //           <div key={index} className="mb-10 ml-4 relative">
+    //             <div className="absolute -top-1 w-3 h-3 bg-green-500/90 rounded-full  -left-1.5 border border-white animate-ping"></div>
+    //             <div className="absolute -top-1 w-3 h-3 bg-green-500/90 rounded-full  -left-1.5 border border-white"></div>
+
+    //             <div className="bg-white p-4 rounded-lg shadow-md ">
+    //               <div className="flex justify-between items-center">
+    //                 <h2 className="text-xl font-semibold pt-3 text-[#0E43A0]">
+    //                   {job.role} <br className="block md:hidden" />
+    //                   <span className="text-[12px] "> at {job.company}</span>
+    //                 </h2>
+    //                 <p className=" py-1 px-2 absolute -top-3 right-0 bg-green-500/90 text-white text-[10px] rounded-t-full rounded-bl-full">
+    //                   <strong>From : </strong>
+    //                   {job.duration}
+    //                 </p>
+    //               </div>
+    //               <h3 className="text-lg font-medium text-gray-600"></h3>
+    //               <p className="text-sm text-gray-500">
+    //                 Industry : {job.industry}
+    //               </p>
+    //               <ul className="mt-2 list-disc list-inside text-gray-500">
+    //                 {job.responsibilities.map((responsibility, idx) => (
+    //                   <li key={idx} className="text-justify text-sm">
+    //                     {responsibility}
+    //                   </li>
+    //                 ))}
+    //               </ul>
+    //               <p className="text-gray-700 text-base mt-2 flex flex-wrap gap-1">
+    //                 {job.skills.map((skill, index) => (
+    //                   <p className="bg-slate-300 md:bg-slate-200 py-[1px] px-[10px] text-[10px] rounded-full opacity-50 md:opacity-90">
+    //                     {skill}
+    //                   </p>
+    //                 ))}
+    //               </p>
+    //               <p className=" text-gray-700 absolute -top-3">
+    //                 <span className=" bg-yellow-300 text-[12px] font-bold px-[4px] py-[2px] rounded-tl-lg rounded-br-lg">
+    //                   {job.type}
+    //                 </span>
+    //               </p>
+    //             </div>
+    //           </div>
+    //         ))}
+    //       </div>
+    //     </div>
+    //   </div>
+    // </section>
+
+    <section
+      style={{
+        background: backgroundStyle,
+      }}
+      className={`bg-portfolio-fold-bg w-full flex justify-center pb-6 pl-3 pr-5 md:px-0  ${bgColor}`}
+    >
+      <div className="w-full max-w-[1050px] flex flex-col gap-0 justify-center md:py-8">
+        <div className=" flex gap-6 items-center my-8 justify-center md:justify-start w-full max-w-[1050px]">
+          <h2 className="min-w-fit text-2xl md:text-4xl font-manrope font-extrabold flex gap-2 items-center">
+            Job Experiences
+          </h2>
+          <div className="bg-[#0d43a0] w-full md:w-full h-[2px] hidden md:block"></div>
+        </div>
+        <div className=" border-l border-gray-200 pl-4 ">
+          {jobExperiences.map((job, index) => (
+            <div key={index} className="mb-10 ml-4 relative">
+              <div className="absolute -top-1 w-3 h-3 bg-green-500/90 rounded-full  -left-1.5 border border-white animate-ping"></div>
+              <div className="absolute -top-1 w-3 h-3 bg-green-500/90 rounded-full  -left-1.5 border border-white"></div>
+
+              <div className="bg-white p-4 rounded-lg shadow-md ">
+                <div className="flex justify-between items-center">
+                  <h2 className="text-xl font-semibold pt-3 text-[#0E43A0]">
+                    {job.role} <br className="block md:hidden" />
+                    <span className="text-[12px] "> at {job.company}</span>
+                  </h2>
+                  <p className=" py-1 px-2 absolute -top-3 right-0 bg-green-500/95 text-white text-[10px] rounded-t-full rounded-bl-full">
+                    <strong>From : </strong>
+                    {job.duration}
                   </p>
                 </div>
+                <h3 className="text-lg font-medium text-gray-600"></h3>
+                <p className="text-sm text-gray-500">
+                  Industry : {job.industry}
+                </p>
+                <ul className="mt-2 list-disc list-inside text-gray-500">
+                  {job.responsibilities.map((responsibility, idx) => (
+                    <li key={idx} className="text-justify text-sm">
+                      {responsibility}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-gray-700 text-base mt-2 flex flex-wrap gap-1">
+                  {job.skills.map((skill, index) => (
+                    <p className="bg-slate-300 md:bg-slate-200 py-[1px] px-[10px] text-[10px] rounded-full opacity-50 md:opacity-90">
+                      {skill}
+                    </p>
+                  ))}
+                </p>
+                <p className=" text-gray-700 absolute -top-3">
+                  <span className=" bg-yellow-300 text-[12px] font-bold px-[4px] py-[2px] rounded-tl-lg rounded-br-lg">
+                    {job.type}
+                  </span>
+                </p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

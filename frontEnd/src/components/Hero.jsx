@@ -11,7 +11,7 @@ const Hero = ({ theme }) => {
 
   return (
     <section
-      className="md:h-[550px] w-full flex justify-between items-center gap-4 md:gap-0 flex-col md:flex-row flex-col-reverse px-4 md:px-0 md: pb-4 md:pb-0 w-[90%] md:max-w-[1050px] mx-auto"
+      className="md:h-[550px] w-full flex justify-between items-center gap-4 md:gap-0  md:flex-row flex-col-reverse px-4 md:px-0 md: py-20 md:py-10  md:max-w-[1050px] mx-auto "
       id="top"
     >
       <div className="h-full w-full md:w-1/2 flex justify-center md:justify-start items-center font-rubik">

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Skills = ({ className, theme }) => {
+const Skills = ({ bgColor, theme }) => {
   const skills = [
     {
       name: "HTTP",
@@ -66,7 +66,7 @@ const Skills = ({ className, theme }) => {
 
   const backgroundStyle =
     theme === "light"
-      ? "linear-gradient(140.53deg, rgba(255, 255, 255, 0.5) 12.34%, rgba(255, 255, 255, 0) 51.46%)"
+      ? ""
       : "linear-gradient(140.53deg, rgba(0, 0, 0, 0.5) 12.34%, rgba(0, 0, 0, 0) 51.46%)";
 
   return (
@@ -74,7 +74,7 @@ const Skills = ({ className, theme }) => {
       style={{
         background: backgroundStyle,
       }}
-      className={`bg-portfolio-fold-bg w-full flex justify-center pb-6 my-6 ${className}`}
+      className={`bg-portfolio-fold-bg w-full flex justify-center pb-6  ${bgColor}`}
     >
       <div className="w-full max-w-[1050px] flex flex-col gap-0 justify-center md:py-8">
         <div

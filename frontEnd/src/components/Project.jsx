@@ -1,190 +1,246 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Project = ({ bgColor, theme }) => {
-  const backgroundStyle =
-    theme === "light"
-      ? "linear-gradient(180.53deg, rgba(255, 255, 255, 0.5) 12.34%, rgba(188, 213, 255, 0.5) 51.46%)"
-      : "linear-gradient(160.53deg, rgba(0, 0, 0, 0) 12.34%, rgba(0, 0, 0, 0.5) 51.46%)";
+const Project = ({ theme }) => {
+  const backgroundStyle = theme === "light" ? "white" : null;
 
-  const jobExperiences = [
+  const projects = [
     {
-      company: "Crio.Do",
-      location: "Remote",
-      role: "Frontend Development",
-      industry: "Software Product",
-      responsibilities: [
-        "Participating in code reviews and providing constructive feedback to peers, fostering a culture of continuous improvement and knowledge sharing within the team.",
-        "Developing and implementing frontend solutions using React, JavaScript, HTML, and CSS, while enhancing skills for a transition to full-stack development.",
-        "Contributing to project planning and execution to ensure timely delivery of high-quality solutions that meet client expectations.",
-      ],
-      skills: ["React", "Front end", "JavaScript", "HTML/CSS", "NodeJs"],
-      duration: "Jun 2024 - Present",
-      type: "Full-time",
-    },
-    {
-      company: "Love Akot Android Application",
-      role: "Backend Developer Intern",
-      industry: "Advertising & Marketing",
-      responsibilities: [
-        "Worked on the server-side development using NodeJS, Express, and Firebase Database.",
-        "Developed and implemented Back-end APIs to support application functionality.",
-      ],
-      skills: ["Backend development", "Node.js"],
-      duration: "Jan 2020 - Apr 2023",
-      type: "Internship",
-    },
-    {
-      company: "Ponzo Technology Pvt. Ltd.",
-      role: "Backend Developer",
-      industry: "Software Product",
-      responsibilities: [
-        "Developed the Back-end system for the Mali Marriage Application using NodeJS, Express, and MySQL.",
-        "Created and deployed APIs to support Back-end functionality and enhance system performance.",
-      ],
-      skills: ["API integrations", "RestAPI"],
-      duration: "Mar 2021 - Nov 2022",
-      type: "Contract",
-    },
-    {
-      company: "Bhavna's Cake",
-      role: "Graphics Designing & Social Media Optimization",
-      industry: "Bakery Chain",
-      responsibilities: [
-        "Created daily graphic posts for the company's social media handles.",
-        "Managed full social media operations and implemented SEO strategies.",
-      ],
+      name: "QTIFY",
+      date: "Dec 2024",
+      description:
+        "QTify is a song-browsing application built from scratch using ReactJS paired with Material UI and Swiper to deliver a seamless and aesthetic user interface, offering songs from different albums and genres for music lovers.",
       skills: [
-        "Digital marketing",
-        "Social Media Marketing",
-        "Instagram ads",
-        "Facebook ads",
-        "Photo editing",
-        "Photoshop",
+        "ReactJS",
+        "Swiper Library usage",
+        "Module-scoped CSS",
+        "Flexbox",
+        "CSS variables",
+        "Condition Rendering",
+        "Component Reusability",
+        "Material UI",
+        "Customizing Third-Party Components",
+        "Deployment",
       ],
-      duration: "Mar 2020 - Jan 2022",
-      type: "Part-time",
+      img: "https://crio-directus-assets.s3.ap-south-1.amazonaws.com/6d1a22a2-22f7-4321-8677-3d62a85fca8c.png",
+      url: "https://shubhamtade.vercel.app/",
+      gitUrl: "https://shubhamtade.vercel.app/",
     },
     {
-      company: "PepperGrub Delivery Service Pvt. Ltd.",
-      role: "Managing Partner",
-      industry: "Food-Delivery",
-      responsibilities: [
-        "Led development as Managing Partner at PepperGrub Delivery Service Pvt. Ltd., creating a grocery delivery hybrid app in Akola, Maharashtra.",
-        "Developed the full system, including the website, admin panel, and mobile app.",
-        "Used PHP, HTML, CSS, JavaScript, MySQL, Codeigniter, and Ionic for development.",
-      ],
+      name: "QKart Frontend",
+      date: "Nov 2024",
+      description:
+        "QKart is an e-commerce application offering a variety of products for customers to choose from. During the course of this project, Implemented the core logic for authentication, shopping cart and checkout. Improved UI by adding responsive design elements for uniform experience across different devices. Utilized REST APIs to dynamically load and render data served by the backend server.",
       skills: [
-        "Digital marketing",
-        "Front-end app development",
-        "Backend development",
-        "Planning and Organising",
-        "Digital campaigns",
+        "React Hooks",
+        "Forms",
+        "Controlled Components",
+        "REST",
+        "JSON",
+        "Error Handling",
+        "Developer Tools",
+        "ES6",
+        "Conditional Rendering",
+        "React State & Props",
+        "React",
+        "Event Handling",
+        "LIFECYCLE METHODS",
+        "React Router",
+        "Material UI",
+        "Responsive Design",
+        "localStorage",
+        "Material UI Grid",
+        "Keyword Search",
+        "Debouncing",
+        "Deployment",
+        "Netlify",
       ],
-      duration: "Dec 2019 - Jun 2021",
-      type: "Full-time",
+      img: "https://crio-directus-assets.s3.ap-south-1.amazonaws.com/e6fb82a2-423d-4f62-9962-f19f2f81fa8c.png",
+      url: "https://shubhamtade.vercel.app/",
+      gitUrl: "https://shubhamtade.vercel.app/",
     },
     {
-      company: "Fozomi Food Delivery Service Pvt. Ltd.",
-      role: "Managing Director",
-      industry: "Food-Delivery",
-      responsibilities: [
-        "Developed the full system for Fozomi Food Delivery Service, a hybrid food delivery application in Amravati, Akola, Maharashtra, including the website, admin panel, and mobile app.",
-        "Utilized PHP, HTML, CSS, JavaScript, MySQL, with Codeigniter framework and Ionic for mobile application development.",
-      ],
+      name: "XBoard",
+      date: "Oct 2024",
+      description:
+        "XBoard is a News Feed website that will feature the latest news for select topics, from Flipboard. Built XBoard using HTML, CSS, Bootstrap and JavaScript from scratch. Used Accordions and Image Carousel to improve UI. Fetched news content from flipboard's RSS feed using REST API.",
       skills: [
-        "Front-end app development",
-        "Backend development",
-        "Digital campaigns",
-        "Digital marketing",
-        "Social Media Marketing",
-        "Planning and Organising",
+        "HTML",
+        "CSS",
+        "Figma",
+        "Bootstrap Accordion",
+        "Bootstrap",
+        "ES6",
+        "JavaScript",
+        "DOM Manipulation",
+        "Developer Tools",
+        "REST",
+        "JSON",
+        "Netlify",
+        "Netlify CLI",
+        "Deployment",
+        "VS Code Live Server",
+        "Bootstrap Carousel",
       ],
-      duration: "Dec 2018 - Jun 2020",
-      type: "Full-time",
+      img: "https://crio-directus-assets.s3.ap-south-1.amazonaws.com/f7dfc8ad-a174-4d2b-8af7-c1ff1e1e8719.png",
+      url: "https://shubhamtade.vercel.app/",
+      gitUrl: "https://shubhamtade.vercel.app/",
     },
     {
-      company: "Pexoya Technology Pvt. Ltd.",
-      role: "Web Designer & Developer",
-      industry: "Software Product",
-      responsibilities: [
-        "Worked as the Head Web Developer, monitoring project development and execution.",
-        "Worked on various freelance projects, applying web development expertise to deliver tailored solutions.",
-      ],
+      name: "QTripDynamic",
+      date: "Oct 2024",
+      description:
+        "QTrip is a travel website aimed at travellers looking for a multitude of adventures in different cities. Created web pages using HTML and CSS and made them dynamic using JavaScript. Improved UX with multi-select filters, image carousels. Utilised localStorage to persist user preferences at client-side.",
       skills: [
-        "Web application development",
-        "Web frameworks",
-        "HTML/CSS",
-        "WordPress",
-        "Marketing",
-        "Marketing management",
-        "Marketing planning",
-        "Web development",
+        "HTML",
+        "CSS",
+        "ES6",
+        "JavaScript",
+        "Developer Tools",
+        "Bootstrap",
+        "HTTP",
+        "REST",
+        "Responsive Design",
+        "VS Code Live Server",
+        "DOM Manipulation",
+        "cURL",
+        "JSON",
+        "Event Handling",
+        "localStorage",
+        "Conditional Rendering",
+        "Bootstrap Carousel",
+        "Netlify CLI",
+        "Deployment",
+        "Heroku",
+        "Netlify",
       ],
-      duration: "Jan 2016 - Mar 2020",
-      type: "Full-time",
+      img: "https://crio-directus-assets.s3.ap-south-1.amazonaws.com/0ba0c306-851a-451e-89bb-623289fca9a3.png",
+      url: "https://shubhamtade.vercel.app/",
+      gitUrl: "https://shubhamtade.vercel.app/",
+    },
+    {
+      name: "QTripStatic",
+      date: "Sep 2024",
+      description:
+        "QTrip is a travel website aimed at travellers looking for a multitude of adventures in different cities. Created 3 different web pages from Wireframe layout using HTML and CSS. Utilized Bootstrap extensively for responsive design. Deployed the website to Netlify/Vercel.",
+      skills: [
+        "HTML",
+        "CSS",
+        "Developer Tools",
+        "Bootstrap",
+        "CSS Flexbox",
+        "Responsive Design",
+        "VS Code Live Server",
+        "Bootstrap Responsive Images",
+        "Bootstrap Flex",
+        "Bootstrap Spacing",
+        "Bootstrap Display",
+        "CSS Positioning",
+        "Deployment",
+        "Netlify",
+        "Netlify CLI",
+      ],
+      img: "https://crio-directus-assets.s3.ap-south-1.amazonaws.com/f7dfc8ad-a174-4d2b-8af7-c1ff1e1e8719.png",
+      url: "https://shubhamtade.vercel.app/",
+      gitUrl: "https://shubhamtade.vercel.app/",
+    },
+    {
+      name: "XCruise",
+      date: "Aug 2024",
+      description:
+        "XCruise is a responsive static website built from scratch using HTML and CSS to provide a seamless and visually appealing experience for users looking to book cruise vacations. The project involved developing a responsive and interactive website that showcases various cruise destinations and provides essential information about XCruise offerings.",
+      skills: ["HTML", "CSS", "Responsive Design"],
+      img: "https://crio-directus-assets.s3.ap-south-1.amazonaws.com/0ba0c306-851a-451e-89bb-623289fca9a3.png",
+      url: "https://shubhamtade.vercel.app/",
+      gitUrl: "https://shubhamtade.vercel.app/",
     },
   ];
 
+  const [expanded, setExpanded] = useState(Array(projects.length).fill(false));
+
+  const toggleExpand = (index) => {
+    setExpanded((prevExpanded) => {
+      const newExpanded = [...prevExpanded];
+      newExpanded[index] = !newExpanded[index];
+      return newExpanded;
+    });
+  };
+
   return (
-    <section
-      style={{
-        background: backgroundStyle,
-      }}
-      className={`flex justify-center pb-6 ${bgColor}`}
-    >
+    <section className="flex justify-center pb-6">
       <div className="w-full max-w-[1050px] flex flex-col gap-0 justify-center md:py-8">
         <div
-          id="skills"
+          id="projects"
           className="text-portfolio-highlighter flex gap-6 items-center my-8 justify-center md:justify-start w-full max-w-[1050px]"
         >
           <h2 className="min-w-fit text-2xl md:text-4xl font-manrope font-extrabold flex gap-2 items-center">
-            Skills Acquired
+            Projects
           </h2>
           <div className="bg-[#0d43a0] w-full md:w-full h-[2px] hidden md:block"></div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 justify- transition duration-300 mx-4 mb-8">
-          {jobExperiences.map((job, index) => {
+        <div className="grid grid-cols-1 gap-2 md:gap-12 transition duration-300 mx-4 mb-8">
+          {projects.map((project, index) => {
+            const displaySkills = expanded[index]
+              ? project.skills
+              : project.skills.slice(0, 4);
             return (
               <div
-                className="max-w-sm rounded overflow-hidden shadow-lg bg-white p-4 m-4 relative"
+                className="max-w-full flex flex-col md:flex-row rounded overflow-hidden shadow-lg border bg-white p-4 m-1 relative"
                 key={index}
               >
-                {/* company: "Crio.Do", location: "Remote", role: "Frontend
-                Development", industry: "Software Product", responsibilities: [
-                "Participating in code reviews and providing constructive
-                feedback to peers, fostering a culture of continuous improvement
-                and knowledge sharing within the team.", "Developing and
-                implementing frontend solutions using React, JavaScript, HTML,
-                and CSS, while enhancing skills for a transition to full-stack
-                development.", "Contributing to project planning and execution
-                to ensure timely delivery of high-quality solutions that meet
-                client expectations.", ], skills: ["React", "Front end",
-                "JavaScript", "HTML/CSS", "NodeJs"], duration: "Jun 2024 -
-                Present", type: "Full-time", */}
                 <img
-                  className="w-full"
-                  src="https://via.placeholder.com/400"
-                  alt="Company"
+                  className="w-[50%] md:w-[30%]"
+                  src={project.img}
+                  alt="Project"
                 />
                 <div className="px-6 py-4">
-                  <div className="font-bold text-xl mb-2 leading-none ">
-                    {job.role} <br />
-                    <span className="text-[12px] ">at {job.company}</span>
+                  <div
+                    className={`font-bold text-xl mb-2 leading-none text-[#0E43A0]`}
+                  >
+                    {project.name} <br />
+                    <span className="text-[12px] ">{project.date}</span>
                   </div>
-
-                  <p className="text-gray-700 text-base">
-                    <strong>Industry:</strong> Software Product{" "}
+                  <p className="text-gray-700 text-sm text-justify">
+                    <strong>Description:</strong> {project.description}
                   </p>
                   <p className="text-gray-700 text-base mt-2 flex flex-wrap gap-1">
-                    {job.skills.map((skill, index) => (
-                      <p className="bg-slate-300 py-[1px] px-[10px] text-[10px] rounded-full opacity-50">
+                    {displaySkills.map((skill, skillIndex) => (
+                      <span
+                        className="bg-slate-300 py-[1px] px-[10px] text-[10px] rounded-full opacity-50"
+                        key={skillIndex}
+                      >
                         {skill}
-                      </p>
+                      </span>
                     ))}
                   </p>
-                  <p className=" py-1 px-2 absolute top-4 right-4 bg-green-500/90 text-white text-[10px] rounded-tl-full rounded-bl-full">
-                    <strong>From : </strong>{job.duration}
-                  </p>
+                  {project.skills.length > 4 && (
+                    <button
+                      onClick={() => toggleExpand(index)}
+                      className={`mt-3 text-white  py-[2px] px-[10px] text-[14px] rounded-full ${
+                        expanded[index] ? "bg-red-500" : "bg-green-500"
+                      }`}
+                    >
+                      {expanded[index] ? "Show Less" : "Show More"}
+                    </button>
+                  )}
+
+                  <div className="mt-3 flex justify-around text-center text-[#0E43A0] rounded-full">
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="bg-yellow-500  hover:bg-transparent hover:border hover:border-yellow-500 hover:text-[#3b68b6] hover:font-bold w-full rounded-l-full py-3 border-r border-white  duration-200"
+                    >
+                      Live Demo
+                    </a>
+                    <a
+                      href={project.gitUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="bg-yellow-500  hover:bg-transparent hover:border hover:border-yellow-500 hover:text-[#3b68b6] hover:font-bold w-full rounded-r-full py-3 border-r border-white  duration-200"
+                    >
+                      Github
+                    </a>
+                  </div>
                 </div>
               </div>
             );
