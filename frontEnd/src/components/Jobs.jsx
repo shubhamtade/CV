@@ -12,7 +12,7 @@ import HotelIcon from "@mui/icons-material/Hotel";
 import RepeatIcon from "@mui/icons-material/Repeat";
 import Typography from "@mui/material/Typography";
 
-export default function CustomizedTimeline({ bgColor, theme }) {
+export default function jobs({ bgColor, theme }) {
   const jobExperiences = [
     {
       company: "Crio.Do",
