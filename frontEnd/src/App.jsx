@@ -3,7 +3,7 @@ import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
 import Project from "./components/Project";
-import Jobs from "./components/jobs";
+import Jobs from "./components/Jobs";
 import GitHub from "./components/GitHub";
 
 const App = () => {
