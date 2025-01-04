@@ -13,12 +13,9 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 
-import { useNavigate } from "react-router-dom";
-import { use } from "react";
-
 const NavBar = ({ theme, setTheme, navBackground }) => {
   // Mobile Menu
-  const navigation = useNavigate();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // const isDarkTheme = theme === "dark";
 
@@ -110,10 +107,6 @@ const NavBar = ({ theme, setTheme, navBackground }) => {
               <a href="#github" className=" h-full flex items-center">
                 GitHub
               </a>
-            </li>
-
-            <li className="h-full font-rubik font-bold cursor-pointer border-b-4 border-[#ffba4a] hover:border-white hover:duration-300 ">
-              <a className=" h-full flex items-center">{navigation("/auth")}</a>
             </li>
           </ul>
           <div className="pl-6 items-center justify-center md:justify-start gap-6 text-xl hidden md:flex ml-6 border-portfolio-highlighter  border-l-[1px] border-[#0E43A0]">
@@ -254,9 +247,6 @@ const NavBar = ({ theme, setTheme, navBackground }) => {
               onClick={toggleMenu}
             >
               GitHub
-            </a>
-            <a className=" text-2xl mb-4 bg-[#4883e9] px-5 py-2 rounded-full">
-              {navigation("/auth")}
             </a>
           </div>
           <div className="absolute bottom-10 left-10">
