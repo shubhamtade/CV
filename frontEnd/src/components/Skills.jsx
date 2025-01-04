@@ -97,7 +97,7 @@ const Skills = ({ bgColor, theme }) => {
                       src={skill.icon}
                       className={`${
                         theme === "light" ? "text-[#0E43A0]" : "text-white"
-                      } real-image relative duration-700 ease-in-out grayscale-0 blur-0 scale-100`}
+                      } real-image relative duration-700 ease-in-out grayscale-0 blur-0 scale-100 grayscale`}
                     />
                   </div>
                 </div>
