@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.auth-container {
+  @apply min-h-screen flex flex-col items-center justify-center bg-gradient-to-tr from-lime-400 via-emerald-500 to-teal-700 overflow-hidden relative;
+}
+
+.back-button {
+  @apply absolute top-2 left-4 w-10 h-10 flex items-center justify-center p-2 bg-[#0E43A0] rounded-full text-white cursor-pointer hover:bg-[#0E43A0]/50 hover:border-2 transition-all duration-200;
+}
+
+.home-tooltip {
+  @apply absolute left-[60px] top-7 transform -translate-y-1/2 opacity-0 bg-white/50 text-[#0E43A0] px-2 py-1 rounded-lg shadow-lg transition-opacity duration-200;
+}
+
+.auth-card {
+  @apply w-full max-w-md p-8 bg-black/40 rounded-lg shadow-md;
+}
+
+.switch-container {
+  @apply flex items-center justify-center mt-4 absolute md:bottom-[15%] bottom-[18%];
+}
+
+.switch-label {
+  @apply text-white;
+}
+
+.switch {
+  @apply transform scale-125;
+}
+
+/* Using regular CSS for hover effect */
+.group:hover .home-tooltip {
+  opacity: 1;
+}

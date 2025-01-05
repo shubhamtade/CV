@@ -5,11 +5,13 @@ import Skills from "./components/Skills.jsx";
 import Project from "./components/Project";
 import Jobs from "./components/Jobs.jsx";
 import GitHub from "./components/GitHub.jsx";
+import SplashCursor from "./components/Animation/Cursor.jsx";
 
 const App = () => {
   const [theme, setTheme] = useState("light");
   const [navBackground, setNavBackground] = useState("");
 
+  // Handle scroll event to set navigation background
   useEffect(() => {
     const handleScroll = () => {
       const show = window.scrollY > 50;
@@ -29,14 +31,18 @@ const App = () => {
 
   return (
     <div
-      className={` ${
+      className={`${
         theme === "light" ? "text-[#0E43A0]" : "text-white"
-      } duration-100  mx-auto relative`}
+      } duration-100 mx-auto relative`}
     >
+      {/* Optional Splash Cursor */}
+      {/* <SplashCursor /> */}
+
+      {/* Navigation Bar */}
       <div
         className={`fixed w-full z-50 ${
           navBackground ? navBackground : "bg-transparent"
-        } `}
+        }`}
       >
         <NavBar
           theme={theme}
@@ -44,10 +50,20 @@ const App = () => {
           navBackground={navBackground}
         />
       </div>
+
+      {/* Hero Section */}
       <Hero theme={theme} />
+
+      {/* Skills Section */}
       <Skills bgColor="bg-slate-100" theme={theme} />
+
+      {/* Projects Section */}
       <Project theme={theme} />
+
+      {/* Jobs Section */}
       <Jobs theme={theme} bgColor="bg-slate-100" />
+
+      {/* GitHub Section */}
       <GitHub theme={theme} />
     </div>
   );

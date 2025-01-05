@@ -1,9 +1,14 @@
+// filepath: /C:/Users/Shubham Tade/OneDrive/Desktop/Resume Website/frontEnd/src/pages/Auth.jsx
 import React from "react";
 import Switch from "@mui/material/Switch";
 import Register from "../components/Auth/Register";
 import Login from "../components/Auth/Login";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { useNavigate } from "react-router-dom";
+// import "../custom.css"; // Import the custom CSS file
 
 const Auth = () => {
+  const navigate = useNavigate();
   const [checked, setChecked] = React.useState(false);
 
   const handleChange = (event) => {
@@ -11,18 +16,27 @@ const Auth = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-tr from-lime-400 via-emerald-500 to-teal-700 overflow-hidden">
-      <div className="w-full max-w-md p-8 bg-black/40 rounded-lg shadow-md">
-        {checked ? <Register /> : <Login />}
+    <div className="auth-container">
+      <div className="back-button">
+        <ArrowBackIcon
+          className="animate-bounceLeft"
+          onClick={() => {
+            navigate("/");
+          }}
+        />
       </div>
-      <div className="flex items-center justify-center mt-4">
-        <span className="mr-2 text-white">Login</span>
+      <span className="home-tooltip">Home</span>
+
+      <div className="auth-card">{checked ? <Register /> : <Login />}</div>
+      <div className="switch-container">
+        <span className="switch-label mr-2">Login</span>
         <Switch
           checked={checked}
           onChange={handleChange}
+          className="switch"
           inputProps={{ "aria-label": "controlled" }}
         />
-        <span className="ml-2 text-white">Register</span>
+        <span className="switch-label ml-2">Register</span>
       </div>
     </div>
   );

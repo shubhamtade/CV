@@ -1,4 +1,6 @@
 import React from "react";
+import CountUp from "./Animation/CountUp";
+import BlurText from "./Animation/NameHeading";
 
 const Hero = ({ theme }) => {
   const porfilePicBg =
@@ -20,7 +22,11 @@ const Hero = ({ theme }) => {
             Hi, my name is
           </p>
           <h1 className="text-portfolio-highlighter text-3xl md:text-5xl font-manrope font-black mb-2 md:mb-4">
-            Shubham Sunil Tade
+            <BlurText
+              text="Shubham Sunil Tade"
+              className="custom-class"
+              delay={10}
+            />
           </h1>
           <p className="text-portfolio-text-light text-xs md:text-base font-normal">
             I have built many industry grade projects from scratch and am armed
@@ -38,7 +44,16 @@ const Hero = ({ theme }) => {
             <div
               className={`text-center flex-1 ${colorTheme} border-r-[1px] last:border-r-0 flex flex-col justify-center items-center md:h-[100px]`}
             >
-              <span className="text-3xl md:text-5xl font-bold">9</span>
+              <span className="text-3xl md:text-5xl font-bold">
+                <CountUp
+                  from={0}
+                  to={9}
+                  separator=","
+                  direction="up"
+                  duration={1}
+                  className="count-up-text"
+                />
+              </span>
               <p className="text-[8px] md:text-[12px] w-max px-3">
                 VERIFIED
                 <br className="block md:hidden" /> SKILLS
@@ -47,7 +62,16 @@ const Hero = ({ theme }) => {
             <div
               className={`text-center flex-1 ${colorTheme} border-r-[1px] last:border-r-0 flex flex-col justify-center items-center md:h-[100px]`}
             >
-              <span className="text-3xl md:text-5xl font-bold">8</span>
+              <span className="text-3xl md:text-5xl font-bold">
+                <CountUp
+                  from={0}
+                  to={8}
+                  separator=","
+                  direction="up"
+                  duration={1}
+                  className="count-up-text"
+                />
+              </span>
               <p className="text-[8px] md:text-[12px] w-max px-3">
                 PROFESSIONAL
                 <br className="block md:hidden" /> PROJECTS
@@ -56,7 +80,17 @@ const Hero = ({ theme }) => {
             <div
               className={`text-center flex-1 ${colorTheme} border-r-[1px] last:border-r-0 flex flex-col justify-center items-center md:h-[100px]`}
             >
-              <span className="text-3xl md:text-5xl font-bold">100+</span>
+              <span className="text-3xl md:text-5xl font-bold">
+                <CountUp
+                  from={0}
+                  to={100}
+                  separator=","
+                  direction="up"
+                  duration={1}
+                  className="count-up-text"
+                />
+                +
+              </span>
               <p className="text-[8px] md:text-[12px] w-max px-3">
                 DSA PROBLEMS
                 <br className="block md:hidden" /> SOLVED
