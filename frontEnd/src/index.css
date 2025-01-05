@@ -8,7 +8,7 @@
 }
 
 .back-button {
-  @apply absolute top-2 left-4 w-10 h-10 flex items-center justify-center p-2 bg-[#0E43A0] rounded-full text-white cursor-pointer hover:bg-[#0E43A0]/50 hover:border-2 transition-all duration-200;
+  @apply absolute top-4 left-4 w-10 h-10 flex items-center justify-center p-2 bg-[#0E43A0] rounded-full text-white cursor-pointer hover:bg-[#0E43A0]/50 hover:border-2 transition-all duration-200;
 }
 
 .home-tooltip {
