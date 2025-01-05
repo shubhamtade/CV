@@ -27,7 +27,13 @@ const Auth = () => {
       </div>
       <span className="home-tooltip">Home</span>
 
-      <div className="auth-card">{checked ? <Register /> : <Login />}</div>
+      <div className="auth-card">
+        {checked ? (
+          <Register setChecked={setChecked} />
+        ) : (
+          <Login setChecked={setChecked} />
+        )}
+      </div>
       <div className="switch-container">
         <span className="switch-label mr-2">Login</span>
         <Switch

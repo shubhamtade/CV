@@ -2,25 +2,23 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function Register() {
+function Register({ setChecked }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
+  // "https://auth-project-with-mysql.onrender.com/register",
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        // "https://auth-project-with-mysql.onrender.com/register",
-        "http://localhost:3000/register",
-        {
-          name,
-          email,
-          password,
-        }
-      );
-      navigate("/login");
+      const response = await axios.post("http://localhost:3000/register", {
+        name,
+        email,
+        password,
+      });
+      setChecked(false);
     } catch (error) {
       setMessage("Error registering user");
       console.log(error);

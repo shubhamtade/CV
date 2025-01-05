@@ -11,23 +11,19 @@ const port = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// Middleware to log response status code
-app.use((req, res, next) => {
-  const originalSend = res.send;
-  res.send = function (body) {
-    console.log(`Response Status Code: ${res.statusCode}`);
-    originalSend.call(this, body);
-  };
-  next();
-});
-
 // MySQL database connection configuration
+// const db = mysql.createConnection({
+//   host: "sql12.freemysqlhosting.net",
+//   user: "sql12754864",
+//   password: "Mj52PVM8SX",
+//   database: "sql12754864",
+// });
+
 const db = mysql.createConnection({
-  host: "sql12.freemysqlhosting.net",
-  user: "sql12754864",
-  password: "Mj52PVM8SX",
-  database: "sql12754864",
-  multipleStatements: true,
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "users",
 });
 
 // Connect to the database
