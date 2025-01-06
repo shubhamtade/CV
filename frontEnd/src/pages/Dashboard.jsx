@@ -59,23 +59,63 @@ function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-center">Dashboard</h2>
-        {user ? (
-          <div>
-            <p className="mb-4">Welcome, {user.name}!</p>
-            <button
-              onClick={handleLogout}
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-            >
-              Logout
-            </button>
+    // <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    //   <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+    //     <h2 className="text-2xl font-bold mb-6 text-center">Dashboard</h2>
+    //     {user ? (
+    //       <div>
+    //         <p className="mb-4">Welcome, {user.name}!</p>
+    //         <button
+    //           onClick={handleLogout}
+    //           className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+    //         >
+    //           Logout
+    //         </button>
+    //       </div>
+    //     ) : (
+    //       <p>Loading user data...</p>
+    //     )}
+    //   </div>
+    // </div>
+    <div className="min-h-screen flex flex-col md:flex-row bg-gray-100">
+      <aside className="w-full md:w-64 bg-gray-800 text-white flex-shrink-0">
+        <div className="p-4">
+          <h2 className="text-lg font-semibold">Admin Dashboard</h2>
+        </div>
+        <nav>
+          <ul>
+            <li className="p-4 hover:bg-gray-700">
+              <a href="#">Dashboard</a>
+            </li>
+            <li className="p-4 hover:bg-gray-700">
+              <a href="#">Users</a>
+            </li>
+            <li className="p-4 hover:bg-gray-700">
+              <a href="#">Settings</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <main className="flex-grow p-8">
+        <div className="min-h-screen flex items-center justify-center bg-gray-100">
+          <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+            <h2 className="text-2xl font-bold mb-6 text-center">Dashboard</h2>
+            {user ? (
+              <div>
+                <p className="mb-4">Welcome, {user.name}!</p>
+                <button
+                  onClick={handleLogout}
+                  className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                >
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <p>Loading user data...</p>
+            )}
           </div>
-        ) : (
-          <p>Loading user data...</p>
-        )}
-      </div>
+        </div>
+      </main>
     </div>
   );
 }

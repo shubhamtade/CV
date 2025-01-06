@@ -17,13 +17,13 @@ const Auth = () => {
 
   return (
     <div className="auth-container">
-      <div className="back-button">
-        <ArrowBackIcon
-          className="animate-bounceLeft"
-          onClick={() => {
-            navigate("/");
-          }}
-        />
+      <div
+        className="back-button"
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        <ArrowBackIcon className="animate-bounceLeft" />
       </div>
       <span className="home-tooltip">Home</span>
 
