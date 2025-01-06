@@ -15,14 +15,13 @@ import AppsIcon from "@mui/icons-material/Apps"; // Skills
 import LogoDark from "../assets/CVLogoDark.png";
 import LogoLight from "../assets/CVLogoIconN.png";
 
-import ProfileComponent from "./pages/Profile/Profile";
+import UserInfoComponent from "./pages/Profile/UserInfo";
 import EditProfileComponent from "./pages/Profile/UpdateProfile";
 import SkillComponent from "./pages/Skills/Skills";
 import ProjectComponent from "./pages/Project/Project";
 import JobsComponent from "./pages/Jobs/Jobs";
 
 // Animation
-
 import GradientText from "../components/Animation/GradientText";
 
 const NAVIGATION = [
@@ -30,11 +29,6 @@ const NAVIGATION = [
     segment: "dashboard",
     title: "Dashboard",
     icon: <DashboardIcon />,
-  },
-  {
-    segment: "profile",
-    title: "Profile",
-    icon: <AccountCircleIcon />,
   },
   {
     segment: "profile/edit",
@@ -80,7 +74,7 @@ function DemoPageContent({ pathname }) {
     email: "shubham.tade@gmail.com",
     socialLinks: {
       facebook: "https://facebook.com/shubham",
-      twitter: "https://twitter.com/shubham",
+      github: "https://github.com/shubhamtade",
       linkedin: "https://linkedin.com/in/shubham",
       instagram: "https://instagram.com/shubham",
     },
@@ -92,20 +86,6 @@ function DemoPageContent({ pathname }) {
   };
 
   switch (pathname) {
-    case "/profile":
-      return (
-        <Box
-          sx={{
-            py: 4,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            textAlign: "center",
-          }}
-        >
-          <ProfileComponent />
-        </Box>
-      );
     case "/profile/edit":
       return (
         <Box
@@ -171,20 +151,23 @@ function DemoPageContent({ pathname }) {
         <Box
           sx={{
             py: 4,
+            px: 2,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             textAlign: "center",
           }}
+          className="mb-2"
         >
           <GradientText
             colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
             animationSpeed={3}
             showBorder={false}
-            className="custom-class text-2xl font-semibold"
+            className="custom-class text-2xl font-semibold my-4"
           >
             Welcome back Shubham Sunil Tade!
           </GradientText>
+          <UserInfoComponent />
         </Box>
       );
   }
@@ -201,7 +184,8 @@ function DashboardLayoutAccount(props) {
     user: {
       name: "Shubham Sunil Tade",
       email: "shubham.tade@gmail.com",
-      image: "https://avatars.githubusercontent.com/u/19550456",
+      image:
+        "https://crio-portfolio-data.s3.ap-south-1.amazonaws.com/profile_picture/shubham-tade?Thu%20Jan%2002%202025%2023:51:03%20GMT+0530%20(India%20Standard%20Time)",
     },
   });
 
@@ -212,7 +196,8 @@ function DashboardLayoutAccount(props) {
           user: {
             name: "Shubham Sunil Tade",
             email: "shubham.tade@gmail.com",
-            image: "https://avatars.githubusercontent.com/u/19550456",
+            image:
+              "https://crio-portfolio-data.s3.ap-south-1.amazonaws.com/profile_picture/shubham-tade?Thu%20Jan%2002%202025%2023:51:03%20GMT+0530%20(India%20Standard%20Time)",
           },
         });
       },

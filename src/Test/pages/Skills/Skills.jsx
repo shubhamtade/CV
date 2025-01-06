@@ -1,9 +1,40 @@
 import * as React from "react";
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
 import AddIcon from "@mui/icons-material/Add";
 import UploadIcon from "@mui/icons-material/Upload";
 import EditIcon from "@mui/icons-material/Edit";
 import SaveIcon from "@mui/icons-material/Save";
+import Avatar from "@mui/material/Avatar";
+import Stack from "@mui/material/Stack";
+
+const StyledBox = styled(Box)(({ theme }) => ({
+  backgroundColor: theme.palette.background.paper,
+  boxShadow: theme.shadows[3],
+  padding: theme.spacing(4),
+  borderRadius: theme.shape.borderRadius,
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  textAlign: "center",
+  width: "100%",
+  maxWidth: "1000px",
+  margin: "auto",
+  marginTop: theme.spacing(4),
+  [theme.breakpoints.up("md")]: {
+    width: "50%", // 50% width on medium and larger screens
+  },
+}));
+
+const StyledAvatar = styled(Avatar)(({ theme }) => ({
+  width: theme.spacing(9),
+  height: theme.spacing(9),
+  marginBottom: theme.spacing(2),
+  backgroundColor: theme.palette.primary.main,
+}));
 
 const Skills = () => {
   const [skills, setSkills] = React.useState([
@@ -54,17 +85,8 @@ const Skills = () => {
   };
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        textAlign: "center",
-        p: 4,
-        borderRadius: 1,
-        boxShadow: 3,
-      }}
-    >
+    <StyledBox>
+      
       <Typography variant="h5" gutterBottom>
         {editIndex !== null ? "Edit Skill" : "Add New Skills"}
       </Typography>
@@ -155,7 +177,7 @@ const Skills = () => {
           </Box>
         ))}
       </Box>
-    </Box>
+    </StyledBox>
   );
 };
 

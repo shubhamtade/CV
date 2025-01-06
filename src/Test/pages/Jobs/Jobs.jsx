@@ -8,10 +8,40 @@ import {
   Card,
   CardContent,
   CardActions,
+  Stack,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import SaveIcon from "@mui/icons-material/Save";
 import EditIcon from "@mui/icons-material/Edit";
+import { styled } from "@mui/material/styles";
+
+const StyledBox = styled(Box)(({ theme }) => ({
+  backgroundColor: theme.palette.background.paper,
+  boxShadow: theme.shadows[3],
+  padding: theme.spacing(4),
+  borderRadius: theme.shape.borderRadius,
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  textAlign: "center",
+  width: "100%",
+  maxWidth: "1000px",
+  margin: "auto",
+  marginTop: theme.spacing(4),
+  [theme.breakpoints.up("md")]: {
+    width: "50%",
+  },
+}));
+
+const StyledCard = styled(Card)(({ theme }) => ({
+  width: 300,
+  borderRadius: theme.shape.borderRadius,
+  boxShadow: theme.shadows[3],
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  textAlign: "center",
+}));
 
 const Jobs = () => {
   const [jobExperiences, setJobExperiences] = React.useState([]);
@@ -81,18 +111,7 @@ const Jobs = () => {
   };
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        textAlign: "center",
-        p: 4,
-        borderRadius: 1,
-        boxShadow: 3,
-        width: "100%",
-      }}
-    >
+    <StyledBox>
       <Typography variant="h5" gutterBottom>
         {editIndex !== null ? "Edit Job Experience" : "Add New Job Experience"}
       </Typography>
@@ -101,7 +120,7 @@ const Jobs = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          width: "80%",
+          width: "100%",
         }}
       >
         <TextField
@@ -183,19 +202,11 @@ const Jobs = () => {
             Add Responsibility
           </Button>
         </Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: 1,
-            mt: 2,
-            width: "100%",
-          }}
-        >
+        <Stack spacing={2} mt={2} width="100%">
           {newJob.responsibilities.map((responsibility, index) => (
             <Chip key={index} label={responsibility} />
           ))}
-        </Box>
+        </Stack>
         <Box
           sx={{
             display: "flex",
@@ -222,19 +233,11 @@ const Jobs = () => {
             Add Skill
           </Button>
         </Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: 1,
-            mt: 2,
-            width: "100%",
-          }}
-        >
+        <Stack spacing={2} mt={2} width="100%">
           {newJob.skills.map((skill, index) => (
             <Chip key={index} label={skill} />
           ))}
-        </Box>
+        </Stack>
         <Button
           variant="contained"
           startIcon={editIndex !== null ? <SaveIcon /> : <AddIcon />}
@@ -264,18 +267,7 @@ const Jobs = () => {
         }}
       >
         {jobExperiences.map((job, index) => (
-          <Card
-            key={index}
-            sx={{
-              width: 300,
-              borderRadius: 2,
-              boxShadow: 3,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              textAlign: "center",
-            }}
-          >
+          <StyledCard key={index}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
                 {job.company}
@@ -298,33 +290,19 @@ const Jobs = () => {
               <Typography variant="body2" color="text.secondary" paragraph>
                 Responsibilities:
               </Typography>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: 1,
-                  mt: 1,
-                }}
-              >
+              <Stack spacing={1}>
                 {job.responsibilities.map((responsibility, idx) => (
                   <Chip key={idx} label={responsibility} />
                 ))}
-              </Box>
+              </Stack>
               <Typography variant="body2" color="text.secondary" paragraph>
                 Skills:
               </Typography>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: 1,
-                  mt: 1,
-                }}
-              >
+              <Stack spacing={1}>
                 {job.skills.map((skill, idx) => (
                   <Chip key={idx} label={skill} />
                 ))}
-              </Box>
+              </Stack>
             </CardContent>
             <CardActions>
               <Button
@@ -336,10 +314,10 @@ const Jobs = () => {
                 Edit
               </Button>
             </CardActions>
-          </Card>
+          </StyledCard>
         ))}
       </Box>
-    </Box>
+    </StyledBox>
   );
 };
 

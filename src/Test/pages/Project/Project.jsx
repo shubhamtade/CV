@@ -1,20 +1,45 @@
 import * as React from "react";
-import {
-  Box,
-  Button,
-  TextField,
-  Typography,
-  Chip,
-  Card,
-  CardMedia,
-  CardContent,
-  CardActions,
-} from "@mui/material";
+import { styled } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import Chip from "@mui/material/Chip";
+import Card from "@mui/material/Card";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
 import AddIcon from "@mui/icons-material/Add";
 import UploadIcon from "@mui/icons-material/Upload";
 import SaveIcon from "@mui/icons-material/Save";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import Avatar from "@mui/material/Avatar";
+
+const StyledBox = styled(Box)(({ theme }) => ({
+  backgroundColor: theme.palette.background.paper,
+  boxShadow: theme.shadows[3],
+  padding: theme.spacing(4),
+  borderRadius: theme.shape.borderRadius,
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  textAlign: "center",
+  width: "100%",
+  maxWidth: "1000px",
+  margin: "auto",
+  marginTop: theme.spacing(4),
+  [theme.breakpoints.up("md")]: {
+    width: "50%", // 50% width on medium and larger screens
+  },
+}));
+
+const StyledAvatar = styled(Avatar)(({ theme }) => ({
+  width: theme.spacing(9),
+  height: theme.spacing(9),
+  marginBottom: theme.spacing(2),
+  backgroundColor: theme.palette.primary.main,
+}));
 
 const Project = () => {
   const [projects, setProjects] = React.useState([]);
@@ -82,18 +107,7 @@ const Project = () => {
   };
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        textAlign: "center",
-        p: 4,
-        borderRadius: 1,
-        boxShadow: 3,
-        width: "100%",
-      }}
-    >
+    <StyledBox>
       <Typography variant="h5" gutterBottom>
         {editIndex !== null ? "Edit Project" : "Add New Project"}
       </Typography>
@@ -102,7 +116,7 @@ const Project = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          width: "80%",
+          width: "100%",
         }}
       >
         <TextField
@@ -315,7 +329,7 @@ const Project = () => {
           </Card>
         ))}
       </Box>
-    </Box>
+    </StyledBox>
   );
 };
 
