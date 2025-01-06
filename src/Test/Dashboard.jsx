@@ -7,12 +7,19 @@ import DashboardIcon from "@mui/icons-material/Dashboard";
 import { AppProvider } from "@toolpad/core/AppProvider";
 import { DashboardLayout } from "@toolpad/core/DashboardLayout";
 import { useDemoRouter } from "@toolpad/core/internal";
-import TimelineIcon from "@mui/icons-material/Timeline";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle"; //User
+import AccountTreeIcon from "@mui/icons-material/AccountTree"; // Project
+import WorkHistoryIcon from "@mui/icons-material/WorkHistory"; //Job
+import AppsIcon from "@mui/icons-material/Apps"; // Skills
 
 import LogoDark from "../assets/CVLogoDark.png";
 import LogoLight from "../assets/CVLogoIconN.png";
 
+import ProfileComponent from "./pages/Profile/Profile";
+import EditProfileComponent from "./pages/Profile/UpdateProfile";
 import SkillComponent from "./pages/Skills/Skills";
+import ProjectComponent from "./pages/Project/Project";
+import JobsComponent from "./pages/Jobs/Jobs";
 
 // Animation
 
@@ -25,9 +32,29 @@ const NAVIGATION = [
     icon: <DashboardIcon />,
   },
   {
+    segment: "profile",
+    title: "Profile",
+    icon: <AccountCircleIcon />,
+  },
+  {
+    segment: "profile/edit",
+    title: "Edit Profile",
+    icon: <AccountCircleIcon />,
+  },
+  {
     segment: "skills",
     title: "Skills",
-    icon: <TimelineIcon />,
+    icon: <AppsIcon />,
+  },
+  {
+    segment: "projects",
+    title: "Project",
+    icon: <AccountTreeIcon />,
+  },
+  {
+    segment: "jobs",
+    title: "Jobs",
+    icon: <WorkHistoryIcon />,
   },
 ];
 
@@ -48,7 +75,54 @@ const demoTheme = createTheme({
 });
 
 function DemoPageContent({ pathname }) {
+  const [userData, setUserData] = React.useState({
+    name: "Shubham Sunil Tade",
+    email: "shubham.tade@gmail.com",
+    socialLinks: {
+      facebook: "https://facebook.com/shubham",
+      twitter: "https://twitter.com/shubham",
+      linkedin: "https://linkedin.com/in/shubham",
+      instagram: "https://instagram.com/shubham",
+    },
+  });
+
+  const handleUpdate = (updatedData) => {
+    setUserData(updatedData);
+    console.log("Profile updated:", updatedData);
+  };
+
   switch (pathname) {
+    case "/profile":
+      return (
+        <Box
+          sx={{
+            py: 4,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+          }}
+        >
+          <ProfileComponent />
+        </Box>
+      );
+    case "/profile/edit":
+      return (
+        <Box
+          sx={{
+            py: 4,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+          }}
+        >
+          <EditProfileComponent
+            initialData={userData}
+            onUpdate={handleUpdate}
+          />
+        </Box>
+      );
     case "/skills":
       return (
         <Box
@@ -60,9 +134,35 @@ function DemoPageContent({ pathname }) {
             textAlign: "center",
           }}
         >
-          <Typography>
-            <SkillComponent />
-          </Typography>
+          <SkillComponent />
+        </Box>
+      );
+    case "/projects":
+      return (
+        <Box
+          sx={{
+            py: 4,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+          }}
+        >
+          <ProjectComponent />
+        </Box>
+      );
+    case "/jobs":
+      return (
+        <Box
+          sx={{
+            py: 4,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+          }}
+        >
+          <JobsComponent />
         </Box>
       );
     case "/dashboard":
@@ -99,8 +199,8 @@ function DashboardLayoutAccount(props) {
 
   const [session, setSession] = React.useState({
     user: {
-      name: "Bharat Kashyap",
-      email: "bharatkashyap@outlook.com",
+      name: "Shubham Sunil Tade",
+      email: "shubham.tade@gmail.com",
       image: "https://avatars.githubusercontent.com/u/19550456",
     },
   });
@@ -111,7 +211,7 @@ function DashboardLayoutAccount(props) {
         setSession({
           user: {
             name: "Shubham Sunil Tade",
-            email: "bharatkashyap@outlook.com",
+            email: "shubham.tade@gmail.com",
             image: "https://avatars.githubusercontent.com/u/19550456",
           },
         });
