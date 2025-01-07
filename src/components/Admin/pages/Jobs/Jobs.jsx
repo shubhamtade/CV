@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addJob, updateJob } from "../../../features/job/jobSlice";
+import { addJob, updateJob } from "../../../../features/job/jobSlice";
 import {
   Box,
   Button,

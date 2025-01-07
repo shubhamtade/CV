@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -18,8 +18,10 @@
     "@mui/styles": "^6.3.0",
     "@react-spring/web": "^9.7.5",
     "@reduxjs/toolkit": "^2.5.0",
+    "@supabase/supabase-js": "^2.47.10",
     "@toolpad/core": "^0.11.0",
     "axios": "^1.7.9",
+    "firebase": "^11.1.0",
     "framer-motion": "^11.15.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

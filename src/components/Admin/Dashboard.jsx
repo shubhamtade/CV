@@ -13,8 +13,8 @@ import WorkHistoryIcon from "@mui/icons-material/WorkHistory"; //Job
 import AppsIcon from "@mui/icons-material/Apps"; // Skills
 import SettingsIcon from "@mui/icons-material/Settings"; // Setting
 
-import LogoDark from "../assets/CVLogoDark.png";
-import LogoLight from "../assets/CVLogoIconN.png";
+import LogoDark from "../../assets/CVLogoDark.png";
+import LogoLight from "../../assets/CVLogoIconN.png";
 
 import UserInfoComponent from "./pages/Profile/UserInfo";
 import EditProfileComponent from "./pages/Profile/UpdateProfile";
@@ -24,7 +24,7 @@ import JobsComponent from "./pages/Jobs/Jobs";
 import SettingComponent from "./pages/Setting/Setting";
 
 // Animation
-import GradientText from "../components/Animation/GradientText";
+import GradientText from "../../components/Animation/GradientText";
 import { useNavigate } from "react-router-dom";
 
 const NAVIGATION = [

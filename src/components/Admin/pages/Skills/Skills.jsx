@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addSkill, updateSkill } from "../../../features/skills/skillsSlice";
+import { addSkill, updateSkill } from "../../../../features/skills/skillsSlice";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";

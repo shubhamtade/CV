@@ -1,0 +1,64 @@
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "password": "securePassword123",
+  "profileImage": "profileImageUrl.jpg",
+  "socialMedia": {
+    "facebook": "facebookProfileUrl",
+    "twitter": "twitterProfileUrl",
+    "linkedin": "linkedinProfileUrl",
+    "instagram": "instagramProfileUrl"
+  },
+  "skills": [
+    {
+      "name": "JavaScript",
+      "image": "javascriptImageUrl.jpg"
+    },
+    {
+      "name": "Python",
+      "image": "pythonImageUrl.jpg"
+    },
+    {
+      "name": "HTML",
+      "image": "htmlImageUrl.jpg"
+    },
+    {
+      "name": "CSS",
+      "image": "cssImageUrl.jpg"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Project Name",
+      "img": "projectImageUrl.jpg",
+      "date": "2023-01-07",
+      "description": "Project description goes here.",
+      "skills": ["JavaScript", "React", "Node.js"],
+      "url": "https://projecturl.com",
+      "gitUrl": "https://github.com/project-repo"
+    }
+  ],
+  "jobs": [
+    {
+      "company": "Company Name",
+      "location": "Company Location",
+      "role": "Job Role",
+      "industry": "Industry",
+      "duration": "Job Duration",
+      "type": "Job Type",
+      "responsibilities": [
+        "Responsibility 1",
+        "Responsibility 2",
+        "Responsibility 3"
+      ],
+      "skills": [
+        "Skill 1",
+        "Skill 2",
+        "Skill 3"
+      ]
+    }
+  ],
+  "isAdmin": false,
+  "createdOn": "2023-01-07T07:40:00Z",
+  "lastLogin": "2023-01-07T07:40:00Z"
+}

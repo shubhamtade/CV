@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { updateProfile } from "../../../features/profileUpdate/profileUpdateSlice";
+import { updateProfile } from "../../../../features/profileUpdate/profileUpdateSlice";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";

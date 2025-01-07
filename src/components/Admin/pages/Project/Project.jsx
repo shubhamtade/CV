@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   addProject,
   updateProject,
-} from "../../../features/projects/projectSlice";
+} from "../../../../features/projects/projectSlice";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
