@@ -195,6 +195,7 @@ export default function jobs({ bgColor, theme }) {
         background: backgroundStyle,
       }}
       className={`bg-portfolio-fold-bg w-full flex justify-center pb-6 pl-3 pr-5 md:px-0  ${bgColor}`}
+      id="jobs"
     >
       <div className="w-full max-w-[1050px] flex flex-col gap-0 justify-center md:py-8">
         <div className=" flex gap-6 items-center my-8 justify-center md:justify-start w-full max-w-[1050px]">
