@@ -261,7 +261,7 @@ function DashboardLayoutAccount(props) {
     >
       <DashboardLayout>
         <DemoPageContent pathname={router.pathname} />
-        <h3 className="bg-red-500 w-full py-2 text-white font-bold text-center absolute bottom-0">
+        <h3 className="bg-red-500 w-full py-2 text-white font-bold text-center fixed bottom-0">
           (<span className="">Temporary Functions are disabled</span>)
         </h3>
       </DashboardLayout>
