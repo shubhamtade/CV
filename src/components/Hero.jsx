@@ -25,13 +25,14 @@ const Hero = ({ theme }) => {
             <BlurText
               text="Shubham Sunil Tade"
               className="custom-class"
-              delay={10}
+              delay={5}
             />
           </h1>
-          <p className="text-portfolio-text-light text-xs md:text-base font-normal">
+          <p className="text-portfolio-text-light text-xs md:text-base font-normal text-justify">
             I have built many industry grade projects from scratch and am armed
             with many technological skills useful for tech projects. Check out
             my projects below. :)
+            {/* I'm a versatile Frontend Developer with six years of freelance experience in web development. Proficient in JavaScript, Node.js, MySQL, and MongoDB, I excel in Requirement Gathering, Digital Marketing, Graphic Designing, and Project Management. :) */}
           </p>
           <div className="text-portfolio-text-medium flex flex-col md:flex-row items-center gap-2 text-sm md:text-lg font-medium mt-4"></div>
           <div
@@ -65,7 +66,7 @@ const Hero = ({ theme }) => {
               <span className="text-3xl md:text-5xl font-bold">
                 <CountUp
                   from={0}
-                  to={8}
+                  to={11}
                   separator=","
                   direction="up"
                   duration={1}

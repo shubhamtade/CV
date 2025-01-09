@@ -187,7 +187,7 @@ function DemoPageContent({ pathname }) {
             showBorder={false}
             className="custom-class text-2xl font-semibold my-4"
           >
-            Welcome back Shubham Sunil Tade!
+            Welcome back user!
           </GradientText>
           <UserInfoComponent />
         </Box>
@@ -249,7 +249,9 @@ function DashboardLayoutAccount(props) {
     <AppProvider
       branding={{
         logo: <img src={LogoDark} alt="MUI logo" />,
-        title: "",
+        title: (
+          <span className="text-red-500">Temporary Functions are disabled</span>
+        ),
         homeUrl: "/toolpad/core/introduction",
       }}
       session={session}
