@@ -62,6 +62,10 @@ const Skills = ({ bgColor, theme }) => {
       name: "Photoshop",
       icon: "https://cdn.iconscout.com/icon/free/png-512/free-photoshop-logo-icon-download-in-svg-png-gif-file-formats--cc-web-browser-pack-logos-icons-226474.png?f=webp&w=256",
     },
+    {
+      name: "Supabse",
+      icon: "https://supabase.com/_next/image?url=%2Fimages%2Fcompany%2Fcommunity%2Fsupabase.png&w=1920&q=75&dpl=dpl_AtNFRa8fxG2KnxmmozdDdfDLugh7",
+    },
   ];
 
   const backgroundStyle =
